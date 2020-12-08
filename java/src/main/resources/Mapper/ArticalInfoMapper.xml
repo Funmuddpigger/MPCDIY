@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.ArticalInfoMapper">
+  <resultMap id="BaseResultMap" type="com.example.demo.entity.ArticalInfo">
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="artical_id" jdbcType="INTEGER" property="articalId" />
+    <result column="artical_text" jdbcType="VARCHAR" property="articalText" />
+    <result column="artical_type" jdbcType="VARCHAR" property="articalType" />
+    <result column="artical_title" jdbcType="VARCHAR" property="articalTitle" />
+    <result column="artical_comment" jdbcType="VARCHAR" property="articalComment" />
+    <result column="author_id" jdbcType="INTEGER" property="authorId" />
+    <result column="author_name" jdbcType="VARCHAR" property="authorName" />
+  </resultMap>
+
+</mapper>
