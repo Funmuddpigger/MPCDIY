@@ -1,10 +1,16 @@
 package com.example.demo.mapper;
 
 import com.example.demo.entity.ArticalInfo;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-import java.util.List;
-import org.apache.ibatis.annotations.Param;
-
-public interface ArticalInfoMapper {
+/**
+ * <p>
+ *  Mapper 接口
+ * </p>
+ *
+ * @author mine
+ * @since 2020-12-08
+ */
+public interface ArticalInfoMapper extends BaseMapper<ArticalInfo> {
 
 }
