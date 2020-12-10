@@ -38,4 +38,10 @@ public class ArticalInfoController {
         Map<String, Object> map = articalInfoService.getMap(arWrapper);
         return Result.success(map);
     }
+
+    @PostMapping("/artical/get")
+    public Result selectAll(){
+
+        return Result.success(null);
+    }
 }
