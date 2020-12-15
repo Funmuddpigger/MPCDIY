@@ -12,5 +12,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @since 2020-12-08
  */
 public interface ArticalInfoMapper extends BaseMapper<ArticalInfo> {
+    //post artical
+    public int postOneArtical(ArticalInfo articalInfo);
 
 }

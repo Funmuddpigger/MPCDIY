@@ -30,7 +30,7 @@ public class Result implements Serializable {
      * @return
      */
     public static Result success(Object data){
-        Result result = new Result(); //别拿出去方法外面new,tm占用内存
+        Result result = new Result();
         result.setCode(200);
         result.setMsg("success");
         result.setData(data);
@@ -44,96 +44,22 @@ public class Result implements Serializable {
      * @return
      */
     public static  Result success(String msg,Object data){
-        Result result = new Result(); //别拿出去方法外面new,tm占用内存
+        Result result = new Result();
         result.setCode(200);
         result.setMsg(msg);
         result.setData(data);
         return result;
     }
 
-
-    /**
-     *  失败状态
-     *  请求失败,500是服务器问题,我们内部问题
-     * @return
-     */
-    public static Result serverfail(String msg){
+    public static Result success(String msg){
         Result result = new Result();
-        result.setCode(500);
+        result.setCode(200);
         result.setMsg(msg);
-        result.setData(null);
+        result.setData("ok");
         return result;
     }
 
-    /**
-     * @Override
-     * @param data
-     * @param msg
-     * @return
-     */
-    public static Result serverfail(String msg,Object data){
-        Result result = new Result();
-        result.setCode(500);
-        result.setMsg(msg);
-        result.setData(data);
-        return result;
-    }
-
-    /**
-     * 请求未认证,跳转登录页
-     * @param msg
-     * @param data
-     * @return
-     */
-    public static Result certificationfail(String msg, Object data){
-        Result result = new Result();
-        result.setCode(401);
-        result.setMsg(msg);
-        result.setData(data);
-        return result;
-    }
-
-    /**
-     * @Override
-     * @param msg
-     * @return
-     */
-    public static Result certificationfail(String msg){
-        Result result = new Result();
-        result.setCode(401);
-        result.setMsg(msg);
-        result.setData(null);
-        return result;
-    }
-
-    /**
-     * 请求未授权,跳转授权页
-     * @param msg
-     * @param data
-     * @return
-     */
-    public static Result authorizationfail(String msg, Object data){
-        Result result = new Result();
-        result.setCode(406);
-        result.setMsg(msg);
-        result.setData(data);
-        return result;
-    }
-
-    /**
-     * @Override
-     * @param msg
-     * @return
-     */
-    public static Result authorizationfail(String msg){
-        Result result = new Result();
-        result.setCode(406);
-        result.setMsg(msg);
-        result.setData(null);
-        return result;
-    }
-
-    public static Result successjson(int code,String msg,Object data){
+    public static Result fail(Integer code,String msg,Object data){
         Result result = new Result();
         result.setCode(code);
         result.setMsg(msg);
@@ -141,24 +67,5 @@ public class Result implements Serializable {
         return result;
     }
 
-    /**
-     * 陈赫成功
-     * @param msg
-     * @return
-     */
-    public static Result audit(String msg){
-        Result result = new Result();
-        result.setCode(500);
-        result.setMsg(msg);
-        result.setData(null);
-        return result;
-    }
 
-    public static Result requestfail(int code,String msg){
-        Result result = new Result();
-        result.setCode(code);
-        result.setMsg(msg);
-        result.setData(null);
-        return result;
-    }
 }

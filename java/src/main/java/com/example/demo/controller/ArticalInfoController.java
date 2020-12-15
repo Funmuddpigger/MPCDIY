@@ -1,17 +1,14 @@
 package com.example.demo.controller;
 
 
+import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.api.R;
 import com.example.demo.entity.ArticalInfo;
 import com.example.demo.service.ArticalInfoService;
 import com.example.demo.utils.Result;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.sql.Wrapper;
 import java.util.List;
@@ -44,5 +41,15 @@ public class ArticalInfoController {
     public Result selectAll(){
 
         return Result.success(null);
+    }
+
+    @PostMapping("/artical/postOne")
+    public Result postOneArtical(@RequestBody JSONObject jsonObject){
+        int res = articalInfoService.postOneArtical(jsonObject);
+        if(res==1) {
+            return Result.success("insert one artical");
+        }else{
+            return Result.fail(410,"insert artical fail","fail");
+        }
     }
 }
