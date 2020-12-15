@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.sql.Wrapper;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -35,8 +36,8 @@ public class ArticalInfoController {
     @PostMapping("/artical/getAllArtical")
     public Result selectAllArtical(){
         QueryWrapper<ArticalInfo> arWrapper = new QueryWrapper<ArticalInfo>();
-        Map<String, Object> map = articalInfoService.getMap(arWrapper);
-        return Result.success(map);
+        List<ArticalInfo> list = articalInfoService.list(arWrapper);
+        return Result.success(list);
     }
 
     @PostMapping("/artical/get")
