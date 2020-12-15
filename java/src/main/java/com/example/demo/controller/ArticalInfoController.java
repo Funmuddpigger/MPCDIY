@@ -52,4 +52,6 @@ public class ArticalInfoController {
             return Result.fail(410,"insert artical fail","fail");
         }
     }
+
+
 }
