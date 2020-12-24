@@ -46,7 +46,10 @@ public class ArticalInfoController {
         List<ArticalInfo> list = articalInfoService.list(arWrapper);
         return Result.success(list);
     }
-
+    @PostMapping("/artical/getByNearlyTime")
+    public Result getByNearlyPostTime(){
+        return Result.success(null);
+    }
 
 
     @PostMapping("/artical/postOne")
