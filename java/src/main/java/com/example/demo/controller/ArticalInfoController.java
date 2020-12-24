@@ -30,6 +30,7 @@ public class ArticalInfoController {
     @Autowired
     ArticalInfoService articalInfoService;
 
+    //get all artical
     @PostMapping("/artical/getAllArtical")
     public Result selectAllArtical(){
         QueryWrapper<ArticalInfo> arWrapper = new QueryWrapper<ArticalInfo>();
@@ -37,11 +38,16 @@ public class ArticalInfoController {
         return Result.success(list);
     }
 
-    @PostMapping("/artical/get")
-    public Result selectAll(){
-
-        return Result.success(null);
+    //get by type
+    @PostMapping("/artical/getAllByType")
+    public Result getByArticalType(@RequestParam(value = "type",defaultValue ="") String type){
+        QueryWrapper<ArticalInfo> arWrapper = new QueryWrapper<>();
+        arWrapper.eq("artical_type",type);
+        List<ArticalInfo> list = articalInfoService.list(arWrapper);
+        return Result.success(list);
     }
+
+
 
     @PostMapping("/artical/postOne")
     public Result postOneArtical(@RequestBody JSONObject jsonObject){
@@ -52,6 +58,8 @@ public class ArticalInfoController {
             return Result.fail(410,"insert artical fail","fail");
         }
     }
+
+
 
 
 }
