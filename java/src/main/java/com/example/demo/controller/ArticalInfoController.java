@@ -46,11 +46,11 @@ public class ArticalInfoController {
         List<ArticalInfo> list = articalInfoService.list(arWrapper);
         return Result.success(list);
     }
+
     @PostMapping("/artical/getByNearlyTime")
     public Result getByNearlyPostTime(){
         return Result.success(null);
     }
-
 
     @PostMapping("/artical/postOne")
     public Result postOneArtical(@RequestBody JSONObject jsonObject){
@@ -61,8 +61,5 @@ public class ArticalInfoController {
             return Result.fail(410,"insert artical fail","fail");
         }
     }
-
-
-
 
 }
